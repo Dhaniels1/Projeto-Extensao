@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#14324a">
+  <meta name="description" content="Protótipo acadêmico de orientação informacional sobre hospitais de Muriaé, MG. Não é um serviço hospitalar oficial.">
+  <title>Cuidar Muriaé | Orientações hospitalares</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script type="module" src="./app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+  <header class="topbar">
+    <div class="shell topbar-inner">
+      <a class="brand" href="#inicio" aria-label="Cuidar Muriaé, ir para o início">
+        <span class="brand-mark" aria-hidden="true">✚</span>
+        <span><strong>Cuidar<span class="brand-accent">Muriaé</span></strong><small>Orientação hospitalar</small></span>
+      </a>
+      <nav class="topnav" aria-label="Navegação principal">
+        <button class="nav-link" type="button" data-go="inicio">Início</button>
+        <button class="nav-link" type="button" data-go="sobre">Sobre o projeto</button>
+        <button class="font-toggle" type="button" data-font aria-label="Aumentar o tamanho dos textos" title="Aumentar tamanho dos textos">A<span>+</span></button>
+      </nav>
+    </div>
+  </header>
+
+  <div class="academic"><div class="shell academic-inner"><span class="academic-dot" aria-hidden="true"></span><strong>PROTÓTIPO ACADÊMICO</strong> <span>Sem vínculo oficial com hospitais. Não realiza triagem, agendamento nem informa vagas.</span></div></div>
+
+  <main id="conteudo" tabindex="-1">
+    <div class="shell main-layout">
+      <aside class="sidebar" aria-labelledby="sidebar-title">
+        <p class="eyebrow" id="sidebar-title">UMA INFORMAÇÃO DE CADA VEZ</p>
+        <h1>Orientações mais claras para sua jornada.</h1>
+        <p class="sidebar-lead">Encontre conteúdos públicos das instituições, entenda o que ainda precisa ser confirmado e acesse sempre a fonte oficial.</p>
+        <div class="trust-card"><span class="trust-icon" aria-hidden="true">✓</span><div><strong>Transparência em cada resposta</strong><p>Indicamos a origem e o estado de revisão das informações. Regras não confirmadas nunca aparecem como definitivas.</p></div></div>
+        <div class="sidebar-footer"><span aria-hidden="true">⌖</span> Muriaé, Minas Gerais <span class="dot-sep" aria-hidden="true">·</span> FCV e Hospital São Paulo</div>
+      </aside>
+      <section class="workspace" aria-labelledby="workspace-label">
+        <div class="workspace-head">
+          <div><p class="eyebrow" id="workspace-label">CONSULTA DE ORIENTAÇÕES</p><p class="workspace-subtitle">Escolha a instituição, um assunto e consulte a fonte.</p></div>
+          <span class="stage-badge" id="stage-badge" aria-live="polite">Etapa 1 de 3</span>
+        </div>
+        <div class="steps" aria-label="Etapas da consulta" id="stepper">
+          <span class="step step-active"><i>1</i> Hospital</span><span class="steps-line" aria-hidden="true"></span>
+          <span class="step"><i>2</i> Assunto</span><span class="steps-line" aria-hidden="true"></span>
+          <span class="step"><i>3</i> Orientação</span>
+        </div>
+        <div id="app" aria-live="polite"></div>
+      </section>
+    </div>
+  </main>
+  <footer class="site-footer"><div class="shell footer-inner"><div><strong>Cuidar Muriaé</strong><p>Projeto de extensão em planejamento • Conteúdo demonstrativo e não clínico.</p></div><button class="footer-link" data-go="sobre" type="button">Entenda os limites da plataforma <span aria-hidden="true">↗</span></button></div></footer>
+</body>
+</html>

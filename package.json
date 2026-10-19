@@ -1,0 +1,10 @@
+{
+  "name": "cuidar-muriae-mvp",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Protótipo acadêmico demonstrativo de orientação hospitalar, sem tratamento de dados de pacientes",
+  "scripts": {
+    "test": "node tests.mjs"
+  }
+}

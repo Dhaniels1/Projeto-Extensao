@@ -1,0 +1,25 @@
+name: Validação do MVP
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  verificar:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Obter código
+        uses: actions/checkout@v4
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Verificar sintaxe
+        run: |
+          node --check data.js
+          node --check app.js
+          node --check tests.mjs
+      - name: Rodar testes informacionais
+        run: npm test
