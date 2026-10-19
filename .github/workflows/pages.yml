@@ -1,0 +1,66 @@
+name: Publicar protótipo no GitHub Pages
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - index.html
+      - styles.css
+      - data.js
+      - app.js
+      - package.json
+      - tests.mjs
+      - .github/workflows/pages.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+
+jobs:
+  validar-e-preparar:
+    name: Verificar MVP e preparar site
+    runs-on: ubuntu-latest
+    steps:
+      - name: Obter repositório
+        uses: actions/checkout@v4
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Verificar sintaxe e catálogo
+        run: |
+          node --check data.js
+          node --check app.js
+          node --check tests.mjs
+          npm test
+      - name: Configurar Pages
+        uses: actions/configure-pages@v5
+      - name: Preparar somente arquivos públicos necessários
+        run: |
+          mkdir -p _site
+          cp index.html styles.css data.js app.js _site/
+          touch _site/.nojekyll
+      - name: Enviar artefato estático
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: _site
+
+  publicar:
+    name: Publicar site
+    if: github.ref == 'refs/heads/main'
+    needs: validar-e-preparar
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Implantar no GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

@@ -11,7 +11,16 @@ A proposta é parte de um projeto de extensão universitária em planejamento. *
 
 ## Demonstração
 
-O site funciona sem backend e sem banco de dados. Depois de ativar a publicação no GitHub Pages (opcional), ele pode ser hospedado diretamente a partir de `main` / raiz. Até lá, execute localmente.
+O site funciona sem backend e sem banco de dados. O fluxo de publicação automática está em `.github/workflows/pages.yml`. Para habilitar o site pela primeira vez:
+
+1. Abra **Settings → Pages** neste repositório.
+2. Em **Build and deployment → Source**, selecione **GitHub Actions** (não "Deploy from a branch").
+3. Abra **Actions → Publicar protótipo no GitHub Pages → Run workflow**, selecionando `main`, se a execução anterior não tiver concluído.
+4. Confira o resultado da execução e, depois da publicação bem-sucedida, acesse o endereço **https://dhaniels1.github.io/Projeto-Extensao/**.
+
+**Importante:** o endereço acima é o destino previsto. **Não considere o site publicado até a execução concluir e o link responder corretamente.** O repositório é público e a plataforma deve continuar claramente identificada como protótipo acadêmico independente.
+
+### Execução local
 
 ```bash
 git clone https://github.com/Dhaniels1/Projeto-Extensao.git
@@ -59,6 +68,7 @@ A Casa de Apoio da FCV **não** equivale a um leito de internação. Documentos 
 | `tests.mjs` | Verificações automatizadas do catálogo |
 | `docs/ESCOPO_E_GOVERNANCA.md` | Escopo da extensão e política de conteúdo |
 | `.github/workflows/ci.yml` | Testes em pull requests e atualizações |
+| `.github/workflows/pages.yml` | Testes e publicação estática automática no GitHub Pages |
 
 ## Testes
 
