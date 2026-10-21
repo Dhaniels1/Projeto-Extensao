@@ -1,47 +1,53 @@
-# Escopo e governança informacional
+# Escopo e governança — Cuidar Muriaé
 
-**Status:** planejamento acadêmico. A criação deste repositório não representa aprovação do projeto de extensão, parceria hospitalar nem autorização para atividades com participantes.
+## Estado do projeto
 
-## Problema e contribuição extensionista
+**Versão 0.2: protótipo acadêmico sem parceria institucional.** O produto usa duas unidades inteiramente fictícias, “Unidade Modelo Aurora” e “Unidade Modelo Horizonte”. Nomes, setores, jornadas, checklists e orientações de interface são **dados sintéticos**. A existência deste repositório não significa aprovação do projeto de extensão.
 
-O projeto pretende investigar e reduzir barreiras informacionais no acesso a orientações administrativas relacionadas à jornada de internação hospitalar, de modo complementar às informações disponibilizadas pelos hospitais. Não pressupomos a existência de falhas em nenhuma instituição.
+## Problema e hipótese
 
-A extensão depende de interação com a comunidade — não se resume à entrega de software. Após as autorizações aplicáveis, a proposta prevê escuta, criação colaborativa, oficina sobre fontes confiáveis e devolutiva das melhorias.
+A hipótese é que organizar informações administrativas por unidade e contexto pode reduzir esforço de navegação e dúvidas. Isso ainda é **hipótese de projeto**, não efeito demonstrado em pacientes ou instituições.
 
-## Alcance do piloto
+## Fronteiras entre demonstração e uso real
 
-- **FCV:** conteúdos públicos relacionados a orientações e à Casa de Apoio. Hospedagem na Casa de Apoio não é internação.
-- **Hospital São Paulo:** documentos gerais e materiais de acompanhamento/visitação por setor, cuja vigência ainda deverá ser confirmada.
-- **Extensão municipal:** objetivo de longo prazo; não está implementado neste MVP.
+| Item | Demonstração 0.2 | Fase institucional futura |
+| --- | --- | --- |
+| Unidade | Fictícia | Somente após autorização e definição do escopo |
+| Regras de visitas, fluxos e documentos | Ilustrações inventadas, sem validade externa | Informação verificada por fonte e responsável |
+| Setores | Cenários inventados | Taxonomia e orientações confirmadas |
+| Checklists | Marcadores efêmeros e não pessoais | Regras de privacidade e conteúdo aprovadas |
+| Resultados | Testes técnicos de navegação | Avaliação extensionista autorizada |
 
-## Dados e funcionalidades
+A versão demonstrativa não aponta para URLs institucionais como fonte das orientações sintéticas e não reutiliza nomes, logos ou endereços de hospitais reais. O aplicativo não coleta nem grava informações de pacientes, nem acessa sistemas de saúde.
 
-Os registros do catálogo em `data.js` têm finalidade demonstrativa e não armazenam dados pessoais. O sistema permite selecionar hospital, assunto e eventualmente setor; apresenta fonte, ressalva e aviso de pendência de verificação.
+## Transição segura para dados reais
 
-O MVP não faz diagnóstico, triagem, encaminhamento baseado em sintomas, recomendação terapêutica, reserva de leitos, internação, alta, agendamento ou acesso a prontuários e sistemas internos.
+Cada registro institucional futuro deverá incluir: unidade e setor autorizados; texto aprovado; fonte primária; data de verificação; responsável pela curadoria; estado da revisão; orientações para dúvidas/retificações; e uma política para retirar conteúdo desatualizado. Dados sintéticos devem permanecer segregados.
 
-## Política de conteúdo
+Não publicar horários de visita, documentos obrigatórios, critérios de acompanhantes, fluxos de admissão, disponibilidade de leitos ou regras de acesso sem validação vigente. A interface informacional não substitui atendimento humano ou orientações clínicas.
 
-Cada orientação destinada a uma versão pública supervisionada deverá conter, no mínimo:
+## O que é e o que não é extensão
 
-1. Hospital e eventual setor/modalidade;
-2. Assunto e mensagem em linguagem simples;
-3. Documento ou URL da fonte primária;
-4. Data de verificação e identificação de responsável pela curadoria;
-5. Estado da informação: localizada/em revisão, verificada documentalmente, validada institucionalmente ou pendente;
-6. Canal institucional para dúvidas e correção.
+O desenvolvimento do software **não substitui** a dimensão de interação com a comunidade. O professor orientador deverá aprovar a proposta extensionista e os requisitos acadêmicos. Pesquisa ou atividades com participantes e instituições de saúde poderão exigir revisão ética, termos de autorização, cuidados com a LGPD e protocolos adequados.
 
-**Nenhuma informação divergente ou desatualizada deve ser divulgada como regra vigente.** Horários e critérios de visita, documentação obrigatória de internação e fluxos operacionais precisam de revisão apropriada. O software deve encaminhar o usuário às fontes oficiais quando houver dúvida.
+## Critérios de aceite técnicos da v0.2
 
-## Pesquisa, LGPD e autorizações
+- Duas unidades sintéticas com assuntos distintos;
+- Alteração efetiva das orientações ao selecionar setores diferentes;
+- Busca em títulos, textos e nomes dos setores;
+- Checklists interativos sem coleta de informações pessoais;
+- Aviso claro de demonstração na navegação;
+- Testes automatizados que rejeitam nomes dos hospitais originais e fontes institucionais;
+- Funcionamento sem backend ou credenciais.
 
-Não incluir dados de pacientes nem arquivos internos neste repositório público. Entrevistas, oficinas dentro de hospitais, marcas institucionais e aproveitamento de resultados em pesquisa/TCC dependem de planejamento e autorizações éticas e institucionais aplicáveis. Não realizar coleta com participantes como pesquisa sem encaminhamento prévio.
+## Critérios de avaliação futura
 
-## Próximas entregas
+Medir em estudos de usabilidade devidamente planejados: taxa de conclusão de tarefas, tempo para localizar uma orientação, erros de navegação, compreensão dos avisos de simulação e barreiras de acessibilidade. Não interpretar resultados de dados sintéticos como efetividade em ambiente hospitalar.
 
-- [ ] Validação do plano com professor orientador;
-- [ ] Revisão documental e contatos institucionais;
-- [ ] Refinamento dos critérios de acessibilidade;
-- [ ] Especificação e execução da oficina comunitária;
-- [ ] Registro autorizado da devolutiva;
-- [ ] Avaliação técnica e priorização da evolução para TCC.
+## Próximos passos acadêmicos
+
+1. Revisar proposta com o orientador.
+2. Definir público-alvo e plano de interação com comunidade.
+3. Avaliar autorizações e aspectos éticos, institucionais e LGPD.
+4. Validar fontes oficiais antes de incluir unidades reais.
+5. Consolidar devolutiva e requisitos do TCC quando cabível.
