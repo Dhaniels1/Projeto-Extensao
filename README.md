@@ -69,3 +69,7 @@ O protótipo **não** oferece triagem, diagnóstico, atendimento, instruções c
 5. Avaliar a viabilidade acadêmica e técnica de evolução para TCC.
 
 **Versão atual:** v0.2 — prova de conceito de usabilidade, não serviço hospitalar.
+
+## Hospedagem de demonstração
+
+O projeto Cloudflare Pages `cuidar-muriae-demo` está conectado à branch `main` para publicação automática. O endereço de destino é https://cuidar-muriae-demo.pages.dev/; confirme um deploy bem-sucedido antes de divulgar.
