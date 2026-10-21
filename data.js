@@ -1,99 +1,269 @@
-/* Catálogo de demonstração, não uma base de regras hospitalares validadas.
- * Nunca atribuir horários de visita, documentos obrigatórios ou disponibilidades
- * de leitos sem confirmação vigente da instituição correspondente.
- */
+/** Cuidar Muriaé v0.2: EXCLUSIVAMENTE dados sintéticos. Nenhuma instituição real é representada. */
+export const catalogMode = "synthetic-demo";
 export const hospitals = [
   {
-    id: "fcv",
-    name: "Fundação Cristiano Varella",
-    short: "FCV · Hospital do Câncer de Muriaé",
-    type: "Assistência oncológica",
-    description: "Conteúdos sobre apoio ao paciente, cartilhas e informações institucionais.",
-    initials: "FCV",
-    website: "https://fcv.org.br/",
-    topics: [
+    "id": "aurora",
+    "name": "Unidade Modelo Aurora",
+    "short": "Instituição inteiramente fictícia • Cenário A",
+    "type": "Internação clínica simulada",
+    "description": "Um cenário de jornada de internação e orientação por setores, feito para testar a experiência de quem acompanha uma pessoa internada.",
+    "initials": "A",
+    "topics": [
       {
-        id: "casa-de-apoio", title: "Casa de Apoio", label: "Hospedagem e acolhimento",
-        summary: "Informações públicas sobre a estrutura de apoio e hospedagem.",
-        status: "documented", sourceTitle: "FCV · Casa de Apoio", sourceUrl: "https://fcv.org.br/casa-de-apoio/",
-        paragraph: "A Fundação Cristiano Varella disponibiliza orientações públicas sobre sua Casa de Apoio. Essa estrutura de hospedagem é diferente dos leitos de internação hospitalar.",
-        caution: "Critérios de acesso, condições e funcionamento devem ser confirmados diretamente com a instituição antes da visita.",
-        sectorOptions: []
+        "id": "chegada",
+        "title": "Chegada para internação",
+        "label": "Jornada guiada",
+        "summary": "Acompanhe o percurso fictício de chegada até o setor de destino.",
+        "intro": "Neste cenário inventado, a pessoa é orientada pela recepção simulada, passa pelo registro de chegada e recebe indicação de um setor.",
+        "sections": [
+          {
+            "title": "1. Recepção de exemplo",
+            "body": "Procure o balcão de acolhimento indicado no mapa ilustrativo. Uma pessoa da equipe fictícia esclareceria o próximo passo."
+          },
+          {
+            "title": "2. Confirmação administrativa",
+            "body": "Um atendente da simulação verifica o motivo da visita e informa qual etapa demonstrativa seguir."
+          },
+          {
+            "title": "3. Orientação ao setor",
+            "body": "Após o registro fictício, a tela indicaria o setor correspondente e apresentaria informações úteis ao acompanhante."
+          }
+        ],
+        "checklist": [
+          "Ler o resumo da jornada simulada",
+          "Identificar a etapa inicial na recepção fictícia",
+          "Revisar as informações do setor de exemplo"
+        ]
       },
       {
-        id: "orientacoes", title: "Orientações aos pacientes", label: "Cartilhas e conteúdos institucionais",
-        summary: "Materiais educativos e informações gerais disponíveis no site.",
-        status: "documented", sourceTitle: "FCV · Orientações aos Pacientes", sourceUrl: "https://fcv.org.br/orientacoes-aos-pacientes/",
-        paragraph: "A Fundação Cristiano Varella mantém uma página com cartilhas e outros conteúdos informacionais para pacientes e familiares.",
-        caution: "Essas publicações não substituem instruções específicas fornecidas pela equipe responsável pela internação.",
-        sectorOptions: []
+        "id": "preparo",
+        "title": "Preparação antes da chegada",
+        "label": "Checklist ilustrativo",
+        "summary": "Veja um roteiro de preparação totalmente inventado para testar o checklist.",
+        "intro": "O checklist abaixo demonstra como o sistema poderia organizar informações administrativas após aprovação institucional. Não representa exigências de nenhum hospital.",
+        "sections": [
+          {
+            "title": "Organize as informações",
+            "body": "O protótipo simula uma lista de confirmação de dados administrativos. Nenhum documento real precisa ser fornecido."
+          },
+          {
+            "title": "Planeje o deslocamento",
+            "body": "Em uma versão validada, este espaço poderia exibir opções oficiais de acesso, entrada e estacionamento. Os endereços não são simulados para evitar confusão com locais reais."
+          }
+        ],
+        "checklist": [
+          "Verificar o resumo demonstrativo",
+          "Anotar dúvidas para a equipe fictícia",
+          "Conferir a etapa de chegada na simulação"
+        ]
       },
       {
-        id: "internacao", title: "Preparação para internação", label: "Admissão e documentos",
-        summary: "Orientações operacionais específicas ainda não verificadas.",
-        status: "pending", sourceTitle: "FCV · Portal institucional", sourceUrl: "https://fcv.org.br/",
-        paragraph: "Ainda não há, neste protótipo, um conjunto de instruções de internação da FCV com vigência confirmada.",
-        caution: "Confirme diretamente com o hospital os documentos, local de apresentação, horários e eventuais orientações particulares do seu atendimento.",
-        sectorOptions: []
+        "id": "visitas",
+        "title": "Visitas e acompanhantes",
+        "label": "Regras variáveis por setor",
+        "summary": "Troque o setor e veja como as informações simuladas mudam.",
+        "intro": "Os textos abaixo ilustram regras administrativas hipotéticas. Eles não descrevem horários, permissões ou políticas reais.",
+        "sections": [
+          {
+            "title": "Visão geral",
+            "body": "Neste cenário, o acesso do acompanhante depende do setor escolhido na simulação. Selecione um setor para visualizar uma orientação diferente."
+          }
+        ],
+        "sectorOptions": [
+          "Visão geral",
+          "Enfermaria Modelo",
+          "Setor Intensivo Modelo"
+        ],
+        "sectorDetails": {
+          "Enfermaria Modelo": {
+            "title": "Orientação fictícia — Enfermaria Modelo",
+            "body": "A tela demonstraria uma identificação de visitante por meio de um cartão de exemplo e explicaria onde obter informações sobre a permanência na unidade simulada.",
+            "steps": [
+              "Consultar o balcão de exemplo",
+              "Ler a orientação ilustrativa de entrada",
+              "Confirmar o setor selecionado"
+            ]
+          },
+          "Setor Intensivo Modelo": {
+            "title": "Orientação fictícia — Setor Intensivo Modelo",
+            "body": "Neste cenário inventado, a informação seria apresentada em linguagem mais objetiva, destacando que condições de acesso podem variar e exigem confirmação humana na aplicação real.",
+            "steps": [
+              "Abrir as orientações do setor intensivo simulado",
+              "Identificar o ponto fictício de informações",
+              "Concluir a leitura do aviso demonstrativo"
+            ]
+          }
+        },
+        "checklist": [
+          "Selecionar um setor de exemplo",
+          "Revisar a orientação específica do setor",
+          "Entender que regras reais exigem validação"
+        ]
       },
       {
-        id: "acompanhantes", title: "Acompanhantes e visitas", label: "Regras de acesso",
-        summary: "Necessária confirmação de normas vigentes da internação.",
-        status: "pending", sourceTitle: "FCV · Portal institucional", sourceUrl: "https://fcv.org.br/",
-        paragraph: "As regras de acompanhantes e visitantes para internação não foram validadas para publicação neste projeto.",
-        caution: "Consulte a equipe da unidade sobre autorização de acompanhantes, acesso aos setores e horários atuais.",
-        sectorOptions: []
+        "id": "setores",
+        "title": "Como encontrar um setor",
+        "label": "Localização ilustrativa",
+        "summary": "Explore a navegação informacional sem mapas ou endereços reais.",
+        "intro": "A unidade, os setores e o fluxo de circulação são inteiramente fictícios.",
+        "sections": [
+          {
+            "title": "Ponto de partida",
+            "body": "Na demonstração, a navegação começa na recepção do edifício imaginário."
+          },
+          {
+            "title": "Destino",
+            "body": "O sistema indicaria uma sequência ilustrativa: recepção → ponto de informação → setor indicado."
+          }
+        ],
+        "checklist": [
+          "Escolher o setor pretendido na demonstração",
+          "Revisar o percurso ilustrativo",
+          "Ver onde solicitar orientação em uma versão futura"
+        ]
       }
     ]
   },
   {
-    id: "hsp",
-    name: "Hospital São Paulo",
-    short: "Casa de Caridade de Muriaé",
-    type: "Hospital geral",
-    description: "Publicações de documentos, setores e orientações a visitantes.",
-    initials: "HSP",
-    website: "https://www.hsp.org.br/",
-    topics: [
+    "id": "horizonte",
+    "name": "Unidade Modelo Horizonte",
+    "short": "Instituição inteiramente fictícia • Cenário B",
+    "type": "Acolhimento e apoio simulados",
+    "description": "Outro cenário com categorias, setores e orientações diferentes, para comprovar que cada unidade pode ter seu próprio conteúdo.",
+    "initials": "H",
+    "topics": [
       {
-        id: "visitantes", title: "Visitantes e acompanhantes", label: "Orientações por setor",
-        summary: "Documentos publicados, mas com regras ainda em revisão.",
-        status: "pending", sourceTitle: "HSP · Normas e Regras para Visitantes e Acompanhantes", sourceUrl: "https://www.hsp.org.br/noticia/detalhe/1923/normas-e-regras-para-visitantes-e-acompanhantes",
-        paragraph: "O Hospital São Paulo publicou documentos com orientações diferenciadas por setor. Na revisão preliminar, foram identificadas divergências entre documentos e referências a práticas de períodos anteriores.",
-        caution: "Não considere horários, limites ou critérios desses materiais automaticamente vigentes. Confirme as regras atuais com o próprio hospital.",
-        sectorOptions: ["Visão geral", "UTI adulto", "Enfermaria SUS e pediatria", "Enfermaria particular/convênio", "Maternidade", "UTI neonatal/pediátrica", "Sala Vermelha"]
+        "id": "chegada",
+        "title": "Primeiro atendimento informacional",
+        "label": "Fluxo de chegada",
+        "summary": "Um processo demonstrativo diferente do exibido na Unidade Aurora.",
+        "intro": "Nesta unidade fictícia, o fluxo prioriza um ponto de informações gerais antes da seleção de um serviço de apoio.",
+        "sections": [
+          {
+            "title": "1. Ponto de acolhimento simulado",
+            "body": "A pessoa visualiza uma recepção fictícia que explica as opções disponíveis, sem classificar urgência ou sintomas."
+          },
+          {
+            "title": "2. Seleção de objetivo",
+            "body": "O sistema apresenta opções administrativas ilustrativas, como localizar um serviço de apoio ou acessar instruções gerais."
+          },
+          {
+            "title": "3. Próximas orientações",
+            "body": "A tela apresenta o cartão correspondente ao assunto escolhido. O protótipo não realiza agendamentos."
+          }
+        ],
+        "checklist": [
+          "Conhecer o ponto de acolhimento simulado",
+          "Escolher um objetivo informacional",
+          "Revisar a orientação ilustrativa"
+        ]
       },
       {
-        id: "documentos", title: "Documentos para atendimento", label: "Informações gerais de cadastro",
-        summary: "Publicação institucional sobre preparação de documentos.",
-        status: "documented", sourceTitle: "HSP · Antes de vir ao hospital, organize os seus documentos", sourceUrl: "https://hsp.org.br/noticia/detalhe/1958/antes-de-vir-ao-hospital-organize-os-seus-documentos",
-        paragraph: "O Hospital São Paulo publicou orientações gerais para que as pessoas organizem documentos de identificação e cadastro antes de comparecer à instituição.",
-        caution: "A página não representa, por si só, uma lista completa de documentos obrigatórios para todos os tipos de internação. Confirme as exigências do seu atendimento.",
-        sectorOptions: []
+        "id": "visitas",
+        "title": "Informações para acompanhantes",
+        "label": "Acesso por ambientes fictícios",
+        "summary": "Selecione um ambiente para experimentar conteúdo contextual.",
+        "intro": "Os setores Azul e Verde existem apenas neste protótipo. Nenhuma regra aqui corresponde a uma instituição real.",
+        "sections": [
+          {
+            "title": "Orientação geral",
+            "body": "Cada ambiente simulado pode ter um texto de acesso e um checklist próprio."
+          }
+        ],
+        "sectorOptions": [
+          "Visão geral",
+          "Setor Azul",
+          "Setor Verde"
+        ],
+        "sectorDetails": {
+          "Setor Azul": {
+            "title": "Orientação fictícia — Setor Azul",
+            "body": "Neste ambiente de demonstração, a pessoa seria direcionada a um ponto ilustrativo de informações antes de seguir para a área de acolhimento.",
+            "steps": [
+              "Consultar o cartão do Setor Azul",
+              "Ler o roteiro de orientação de exemplo"
+            ]
+          },
+          "Setor Verde": {
+            "title": "Orientação fictícia — Setor Verde",
+            "body": "Este ambiente simula uma jornada com um ponto de apoio separado da recepção, permitindo demonstrar uma recomendação contextual diferente do Setor Azul.",
+            "steps": [
+              "Identificar o ponto fictício de apoio",
+              "Revisar as instruções ilustrativas do Setor Verde"
+            ]
+          }
+        },
+        "checklist": [
+          "Selecionar o ambiente de exemplo",
+          "Comparar os textos de cada ambiente",
+          "Revisar o aviso de caráter fictício"
+        ]
       },
       {
-        id: "internacao", title: "Etapas da internação", label: "Admissão hospitalar",
-        summary: "Fluxo administrativo específico precisa de validação.",
-        status: "pending", sourceTitle: "HSP · Portal institucional", sourceUrl: "https://www.hsp.org.br/",
-        paragraph: "O projeto ainda não dispõe de um fluxo completo de admissão hospitalar validado para cada modalidade de atendimento.",
-        caution: "Confirme com a equipe responsável os procedimentos, documentos e o local de apresentação da sua internação.",
-        sectorOptions: []
+        "id": "apoio",
+        "title": "Serviços de apoio",
+        "label": "Informações e acolhimento",
+        "summary": "Conheça serviços inventados para explorar a jornada de informação.",
+        "intro": "Este cenário não apresenta serviços hospitalares existentes. Os nomes são usados apenas para demonstrar organização de conteúdo.",
+        "sections": [
+          {
+            "title": "Balcão de Informações Modelo",
+            "body": "Um ponto de referência simulado para perguntas administrativas, utilizado para experimentar a navegação."
+          },
+          {
+            "title": "Espaço de Acolhimento Modelo",
+            "body": "Uma área imaginária descrita para ilustrar como futuros conteúdos de apoio poderiam ser apresentados."
+          }
+        ],
+        "checklist": [
+          "Localizar o Balcão de Informações Modelo",
+          "Conhecer o Espaço de Acolhimento Modelo",
+          "Concluir o percurso fictício"
+        ]
+      },
+      {
+        "id": "perguntas",
+        "title": "Perguntas frequentes",
+        "label": "Respostas demonstrativas",
+        "summary": "Veja uma biblioteca de dúvidas típicas do processo, sem regras reais.",
+        "intro": "Perguntas e respostas a seguir são exemplos de interface e não instruções para atendimento hospitalar.",
+        "sections": [
+          {
+            "title": "Onde encontro informações sobre a unidade?",
+            "body": "Neste protótipo, selecione um assunto na lista inicial ou utilize a busca. Uma versão institucional apresentaria contatos verificados."
+          },
+          {
+            "title": "Posso registrar meus dados por aqui?",
+            "body": "Não. A demonstração não coleta nomes, documentos, prontuários nem outras informações pessoais."
+          },
+          {
+            "title": "Estas informações são oficiais?",
+            "body": "Não. A Unidade Horizonte e todo o conteúdo associado são fictícios e destinados a testes de navegação."
+          }
+        ],
+        "checklist": [
+          "Experimentar a busca de assuntos",
+          "Ler um exemplo de resposta",
+          "Voltar para selecionar outra unidade"
+        ]
       }
     ]
   }
 ];
 export const getHospital = id => hospitals.find(h => h.id === id) || null;
 export const getTopic = (hospitalId, topicId) => getHospital(hospitalId)?.topics.find(t => t.id === topicId) || null;
-export function validateCatalog() {
-  const errors = [];
-  for (const hospital of hospitals) {
-    if (!hospital.id || !hospital.name || !hospital.website?.startsWith("https://")) errors.push("Hospital incompleto: " + hospital.id);
-    for (const topic of hospital.topics) {
-      if (!topic.title || !["pending", "documented"].includes(topic.status)) errors.push("Assunto incompleto: " + topic.id);
-      if (!topic.sourceUrl?.startsWith("https://")) errors.push("Fonte inválida: " + topic.id);
-      if (!topic.paragraph || !topic.caution) errors.push("Orientação incompleta: " + topic.id);
-    }
+export function validateCatalog(){
+ const errors=[];const ids=new Set();
+ for(const hospital of hospitals){
+  if(ids.has(hospital.id))errors.push("Unidade duplicada: "+hospital.id);
+  ids.add(hospital.id);
+  if(!hospital.name||!hospital.short||!hospital.description||!Array.isArray(hospital.topics))errors.push("Unidade incompleta: "+hospital.id);
+  const tid=new Set();
+  for(const t of hospital.topics||[]){
+   if(tid.has(t.id))errors.push("Assunto duplicado: "+t.id);tid.add(t.id);
+   if(!t.id||!t.title||!t.summary||!t.intro||!t.sections?.length||!t.checklist?.length)errors.push("Assunto incompleto: "+t.id);
+   if(t.sectorDetails && Object.keys(t.sectorDetails).some(k=>!t.sectorOptions?.includes(k)))errors.push("Setor sem opção: "+t.id);
   }
-  return errors;
+ }
+ return errors;
 }
-
